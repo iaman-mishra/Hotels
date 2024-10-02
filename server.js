@@ -26,14 +26,14 @@ app.use(logRequest);
 
 // ------------------------------------------------------Defining server endpoints------------------------------------------------------
 
-app.get("/",authenticate,(req,res)=>{ res.send("Welcome to home page") }); 
+app.get("/",(req,res)=>{ res.send("Welcome to home page") }); 
 
 // Import Routers file 
 const personRoutes=require("./routes/personRoutes");
 const menuRoutes=require("./routes/menuRoutes");     
 
 // Use Router file
-app.use("/person",authenticate,personRoutes);
+app.use("/person",personRoutes);
 app.use("/menu",menuRoutes);
 
 // Just a comment to test
